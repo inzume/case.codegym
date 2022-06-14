@@ -58,8 +58,6 @@ public void SortMoney(){
         System.out.println("6 Show ra thời gian của người dùng");
         System.out.println("7 Đổi mật khẩu");
         System.out.println("8 Sắp xếp người dùng");
-//        Vip 1 thì cấu hình chơi đc LOL
-//        Vip 2 thì cấu hình chơi đc PUBG
         int choice = Integer.parseInt(scanner.nextLine());
        switch (choice){
            case 1: add();
@@ -103,10 +101,10 @@ public void SortMoney(){
         customers.add(CreateCustomer());
         readerAndWriter.write(customers);
     }
-    public void addtkmk(){
-        admins.add(new ADMIN("manhdung","dung2003"));
-        readerAndWriterTKMK.write(admins);
-    }
+//    public void addtkmk(){
+//        admins.add(new ADMIN("manhdung","dung2003"));
+//        readerAndWriterTKMK.write(admins);
+//    }
     public void repair(){
 
         System.out.println("nhap ten can tim");
@@ -117,6 +115,7 @@ public void SortMoney(){
             if (customers.get(i).getName().equals(name)){
                 customers.set(i,CreateCustomer());
                 readerAndWriter.write(customers);
+                break;
         }
             else {
                 System.out.println("khong ton tai");
@@ -139,8 +138,9 @@ public void SortMoney(){
     }
     public void addMoney(){
         System.out.println("nhap ten nguoi can nap");
-        String name = scanner.nextLine();
+
         for (int i = 0; i <customers.size() ; i++) {
+            String name = scanner.nextLine();
             if (customers.get(i).getName().equals(name)){
                 System.out.println("nhap so tien can nap");
                 double money = Double.parseDouble(scanner.nextLine());
@@ -199,13 +199,7 @@ public void SortMoney(){
     }
 
 
-    public static void main(String[] args) {
 
-        ManageNet manageNet = new ManageNet();
-        manageNet.log();
-
-
-    }
 
 }
 
