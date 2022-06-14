@@ -138,13 +138,14 @@ public void SortMoney(){
     }
     public void addMoney(){
         System.out.println("nhap ten nguoi can nap");
-
+        String name = scanner.nextLine();
         for (int i = 0; i <customers.size() ; i++) {
-            String name = scanner.nextLine();
+
             if (customers.get(i).getName().equals(name)){
                 System.out.println("nhap so tien can nap");
                 double money = Double.parseDouble(scanner.nextLine());
                 customers.get(i).setMoney((money+customers.get(i).getMoney()));
+                System.out.println("nap thanh cong");
                 readerAndWriter.write(customers);
 
                 break;
